@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 //Since UserDetailsService is an interface, we have to implement the class and define our custom UserDetailsService to load user-specific data from the database
 //it helps to retrieve user data from the database during authentication. It is part of Spring Security and defines a single method to load user details by username (or email).
+// and it returns a UserDetails object containing username, password, and authorities.
 @Service
 public class CustomUserDetailsService implements UserDetailsService  {
 

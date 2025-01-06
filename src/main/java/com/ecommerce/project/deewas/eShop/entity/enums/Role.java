@@ -56,6 +56,8 @@ public enum Role {
         return this.permissions;
     }
 
+    // Get the granted authorities for the role. This method returns a list of SimpleGrantedAuthority objects that represent the permissions and the role itself as a granted authority.
+    // SimpleGrantedAuthority is needed to make the permissions and the role available to spring security for authorization purposes when a user is authenticated.
     public List<SimpleGrantedAuthority> getAuthorities() {  //This method converts each permission in the permissions set to a SimpleGrantedAuthority object, which is used in Spring Security to handle authorization (who can access what).
         ArrayList<SimpleGrantedAuthority> grantedAuthorities;
         grantedAuthorities = new ArrayList<>(getPermissions()
